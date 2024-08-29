@@ -1,38 +1,105 @@
+/* Estilos generales para la aplicación */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Estilo para el contenedor principal de la aplicación */
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos para el título del chatbot */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007BFF; /* Color principal */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilo del contenedor del chatbot */
+.chatbot-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Estilo para el registro de chat */
+.chat-log {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+/* Estilo para los mensajes individuales del chat */
+.chat-message {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.chat-message p {
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.chat-message strong {
+  display: block;
+  font-weight: bold;
+}
+
+/* Estilo para los mensajes del usuario */
+.chat-message p:first-child {
+  background-color: #007BFF;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilo para los mensajes del asistente */
+.chat-message p:last-child {
+  background-color: #f1f1f1;
+  color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilo para el formulario de chat */
+.chat-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-input {
+  width: calc(100% - 50px);
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.chat-send-button {
+  background-color: #007BFF;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el pie de página */
+.footer {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
 }
