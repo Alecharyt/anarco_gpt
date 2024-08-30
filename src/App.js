@@ -10,7 +10,7 @@ function App() {
     if (message.trim() === '') return;
 
     try {
-      const res = await fetch('https://anarcogpt.com', {  // Cambia esto a la URL donde se despliegue Flask
+      const res = await fetch('http://localhost:5000/chat', {  // Cambia esto a la URL donde se despliegue Flask
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
