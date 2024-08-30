@@ -10,7 +10,7 @@ function App() {
     if (message.trim() === '') return;
 
     try {
-      const res = await fetch('https://anarcogpt.com/chat', {
+      const res = await fetch('https://anarcogpt.com', {
 
         method: 'POST',
         headers: {
