@@ -11,15 +11,34 @@ function App() {
 
     try {
       const res = await fetch('https://anarcogpt.com', {
-
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message }),
       });
-      const data = await res.json();
-      setChatLog([...chatLog, { user: message, bot: data.response }]);
+
+      // Verificar el estado de la respuesta
+      console.log('Response status:', res.status); // Imprimir el estado de la respuesta
+
+      if (!res.ok) {
+        throw new Error(`Network response was not ok: ${res.statusText}`);
+      }
+
+      // Leer la respuesta como texto para verificar si es JSON válido
+      const text = await res.text(); // Lee la respuesta como texto
+      console.log('Response text:', text); // Imprimir el texto de la respuesta
+
+      // Intentar convertir el texto a JSON
+      const data = JSON.parse(text);
+
+      // Verifica si 'data' tiene la estructura esperada
+      if (data && data.response) {
+        setChatLog([...chatLog, { user: message, bot: data.response }]);
+      } else {
+        console.error('Unexpected response structure:', data);
+      }
+
       setMessage('');
     } catch (error) {
       console.error('Error:', error);
